@@ -1,11 +1,7 @@
 # DCS_SAM-Scoot
 DCSのSAMの生存性を向上させるスクリプトです。<br>
-具体的な機能として、<br>
-・JDAMなどの爆弾を探知・分析し、危険と判断した場合は逃げる（陣地転換）<br>
-を実装しました。<br>
+JDAMなどの爆弾を探知・分析し、危険と判断した場合は逃げる（陣地転換）する機能を実装しました。<br>
 ![Digital Combat Simulator  Black Shark Screenshot 2022 03 26 - 22 36 11 61](https://user-images.githubusercontent.com/30495755/160241986-a8bb2ef9-00de-4a7b-8340-7c19f8eccc98.png)
-
-<br>
 注意！<br>
 このスクリプトは"移動可能"なSAMが対象です。<br>
 SA-2やSA-10といったゲーム上で移動できないSAMは適用できません。<br>
@@ -22,6 +18,7 @@ SA-2やSA-10といったゲーム上で移動できないSAMは適用できま�
   以下の画像を参考にしてください。<br>
   注意：SAM-ScriptではTYPEは"4 MISSION START"ですが、今回は"1 ONCE"です。<br>
   ![Digital Combat Simulator  Black Shark Screenshot 2022 03 26 - 22 23 05 12](https://user-images.githubusercontent.com/30495755/160241496-478e8f33-128d-4eac-8e26-8123174323e6.png)
+
 <br>
 ■SAMの配置について<br>
 SAMを配置したときに、グループ名に"scoot"を含めると今回のスクリプトの対象となります。<br>
@@ -34,8 +31,8 @@ SAMを配置したときに、グループ名に"scoot"を含めると今回の�
     本当はユニット単位で動いて欲しいですがゲームの現時点の仕様では無理です...<br>
 <br>
 ■WayPointの設定について<br>
-このスクリプトはALARM STATEの挙動を利用。<br>
-DCSのSAMは、ALARM STATEがREDの時に交戦します。<br>
+このスクリプトはALARM STATEの挙動を利用しています。<br>
+DCSのSAMは、ALARM STATEがREDの時に交戦。<br>
 逆に、ALARM STATEがGREENの時に移動先のWayPointが指定されていると移動を開始。<br>
 これを活用し、<br>
 爆弾が接近<br>

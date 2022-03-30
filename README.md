@@ -7,10 +7,12 @@ JDAMなどの爆弾を探知・分析し、危険と判断した場合は逃げ�
 SA-2やSA-10といったゲーム上で移動できないSAMは適用できません。<br>
 
 # 使い方<br>
-手順は大きく3つに分けるられます<br>
+手順は大きく3つです<br>
 ・スクリプトの導入<br>
 ・SAMの配置<br>
 ・WayPointの設定<br>
+<br>
+サンプルミッションを用意しましたのでそちらを参考にしていただければと思います。<br>
 <br>
 ■スクリプトの導入について<br>
 1.ここでluaファイルをダウンロード<br>
@@ -22,7 +24,7 @@ SA-2やSA-10といったゲーム上で移動できないSAMは適用できま�
 <br>
 ■SAMの配置について<br>
 SAMを配置したときに、グループ名に"scoot"を含めると今回のスクリプトの対象となります。<br>
-![Digital Combat Simulator  Black Shark Screenshot 2022 03 26 - 22 21 36 86](https://user-images.githubusercontent.com/30495755/160241441-3d3cdc51-9fdd-488a-9f7f-689f965a74de.png)
+
 <br>
 注意点として、<br>
 ・支援車両を含めないほうが好ましい<br>
@@ -43,20 +45,25 @@ DCSのSAMは、ALARM STATEがREDの時に交戦。<br>
 <br>
 1.WayPointの追加<br>
   移動先を指定してください。<br>
-  このときTYPEを"CUSTAM"にしてTEMPLATEを該当するものにすると綺麗に動いてくれます。（あとSPEEDも最大値にすると生き残る確率が高くなります）<br>
-  ![Digital Combat Simulator  Black Shark Screenshot 2022 03 26 - 22 26 33 62](https://user-images.githubusercontent.com/30495755/160241604-83e8e62e-1eec-415a-9958-96b3e1e022fc.png)
+  このときTYPEを"CUSTAM"にしてTEMPLATEを該当するものにすると綺麗に動いてくれます。（サンプルミッションではLINE ABREASTを適用）<br>
+  移動速度を上げておくと生存率が上がります。<br>
+  
 2.Waypointの設定<br>
   次に展開したいPointでALARM STATEをREDに設定。<br>
   複数のポイントで設定することが可能です。<br>
 3.最終地点の設定<br>
   Go to wayPointを設定するとWayPointをループさせることができます。<br>
-  ![Digital Combat Simulator  Black Shark Screenshot 2022 03 26 - 22 27 38 89](https://user-images.githubusercontent.com/30495755/160241651-90208d2e-9a13-4097-b3f7-5747d8e24cc0.png)
+
+  
 # 不具合
-・ランチャーが移動しない<br>
+・ランチャーが移動しないことがある<br>
   SA-6のランチャーは射撃体勢に入ってしまうとなぜか動きません。<br>
+・SA-15に適用すると動き回る<br>
+　申し訳ないですが現在対応中です。<br>
 <br>
 バグや不明点、要望などがございましたらTwitterでご連絡ください。<br>
 https://twitter.com/Tama010
+
 # 余談
 MK82のRCSは角度によって変化しますが凡そ0.05~0.1㎡らしいです。<br>
   

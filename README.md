@@ -4,6 +4,7 @@ JDAMなどの爆弾を探知・分析し、危険と判断した場合は逃げ�
 ![Digital Combat Simulator  Black Shark Screenshot 2022 03 26 - 22 36 11 61](https://user-images.githubusercontent.com/30495755/160241986-a8bb2ef9-00de-4a7b-8340-7c19f8eccc98.png)
 注意！<br>
 このスクリプトは"移動可能"なSAMが対象です。<br>
+具体的には、SA-6,SA-8,SA-11,SA-15,SA-19,Gepardを想定しています。<br>
 SA-2やSA-10といったゲーム上で移動できないSAMは適用できません。<br>
 
 # 使い方<br>
@@ -33,16 +34,14 @@ SAMを配置したときに、グループ名に"scoot"を含めると今回の�
     本当はユニット単位で動いて欲しいですがゲームの現時点の仕様では無理です...<br>
 <br>
 ■WayPointの設定について<br>
-このスクリプトはALARM STATEの挙動を利用しています。<br>
-DCSのSAMは、ALARM STATEがREDの時に交戦。<br>
-逆に、ALARM STATEがGREENの時に移動先のWayPointが指定されていると移動を開始。<br>
-これを活用し、<br>
-爆弾が接近<br>
-⇒ALARM STATEをGREENに変更<br>
-⇒移動<br>
-を実現しています。<br>
-設定を正しくしないと意図しない挙動を引き起こすのでご注意ください。<br>
+SAMによって設定方法が異なります。<br>
+・ALARM STATEの設定が必要なSAM<br>
+　SA-6、SA-11<br>
+・hold設定が必要なSAM<br>
+　SA-9、SA-15、SA-19、Gepard
 <br>
+<br>
+<p><b>・ALARM STATEの設定が必要なSAM</b><br>
 1.WayPointの追加<br>
   移動先を指定してください。<br>
   このときTYPEを"CUSTAM"にしてTEMPLATEを該当するものにすると綺麗に動いてくれます。（サンプルミッションではLINE ABREASTを適用）<br>
@@ -53,13 +52,20 @@ DCSのSAMは、ALARM STATEがREDの時に交戦。<br>
   複数のポイントで設定することが可能です。<br>
 3.最終地点の設定<br>
   Go to wayPointを設定するとWayPointをループさせることができます。<br>
-
+<br>
+<p><b>・hold設定が必要なSAM<br></b></p>
+1.WayPointの追加<br>
+2.Waypointの設定<br>
+　停車したい場所にPerform TaskのAction:holdを設定してください。<br>
+3.最終地点の設定<br>
+ALARM STATEのパターンと違いループさせることができません。<br>
+正確には、<b>最終地点でGo to wayPointで元の位置に戻た場合、holdのコマンドが機能せず停車しなくなります。</b><br>
+何度も避けたい場合は複数の地点を設定する必要があります。<br>
   
 # 不具合
-・ランチャーが移動しないことがある<br>
-  SA-6のランチャーは射撃体勢に入ってしまうとなぜか動きません。<br>
-・SA-15に適用すると動き回る<br>
-　申し訳ないですが現在対応中です。<br>
+・hold制御のパターンだと移動の途中で中途半端な場所で停車することがある。<br>
+　　⇒ロックオン状態の時に発生します。<br>
+　　　対応するか検討中です。<br>
 <br>
 バグや不明点、要望などがございましたらTwitterでご連絡ください。<br>
 https://twitter.com/Tama010
